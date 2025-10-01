@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snake</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <h1>Snake</h1>
+      <div class="scores">
+        <div>Score: <span id="score">0</span></div>
+        <div>Best: <span id="best">0</span></div>
+      </div>
+    </header>
+    <main>
+      <div class="canvas-wrap">
+        <canvas id="game" width="600" height="600" aria-label="Snake game" role="img"></canvas>
+        <div id="overlay" class="overlay hidden" role="dialog" aria-live="polite"></div>
+      </div>
+      <div class="controls">
+        <button id="btn-pause" title="Pause/Resume" aria-pressed="false">Pause</button>
+        <button id="btn-restart" title="Restart">Restart</button>
+      </div>
+      <div class="touch-controls" aria-label="Touch controls">
+        <div class="row">
+          <button class="dpad" data-dir="up" aria-label="Up">▲</button>
+        </div>
+        <div class="row">
+          <button class="dpad" data-dir="left" aria-label="Left">◀</button>
+          <button class="dpad" data-dir="right" aria-label="Right">▶</button>
+        </div>
+        <div class="row">
+          <button class="dpad" data-dir="down" aria-label="Down">▼</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="./script.js"></script>
+  <noscript>You need JavaScript enabled to play.</noscript>
+</body>
+<!--
+  Controls:
+  - Arrow Keys / WASD to move
+  - P or button to pause/resume
+  - R or button to restart
+-->
+</html>
+

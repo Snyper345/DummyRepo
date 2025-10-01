@@ -1,0 +1,159 @@
+:root {
+  --bg: #0f1220;
+  --panel: #171a2b;
+  --accent: #7cffb2;
+  --accent-2: #ffcc66;
+  --text: #e7e9ee;
+  --muted: #9aa3b2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(1200px 700px at 80% -100px, #1b1f36 0%, var(--bg) 55%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.scores {
+  display: flex;
+  gap: 14px;
+  color: var(--muted);
+}
+
+main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 0 16px 24px;
+}
+
+.canvas-wrap {
+  position: relative;
+  background: linear-gradient(180deg, #14172a, #0e1120);
+  border: 1px solid #242743;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+  overflow: hidden;
+}
+
+canvas#game {
+  display: block;
+  width: min(90vw, 90vh, 640px);
+  height: min(90vw, 90vh, 640px);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 12, 24, 0.6);
+  color: var(--text);
+  text-align: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay .panel {
+  background: var(--panel);
+  border: 1px solid #2a2e52;
+  border-radius: 12px;
+  padding: 18px 20px;
+  max-width: 420px;
+  width: 90%;
+}
+
+.overlay h2 {
+  margin: 0 0 6px;
+}
+
+.overlay p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.controls button {
+  appearance: none;
+  border: 1px solid #2a2e52;
+  background: var(--panel);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.controls button:hover {
+  border-color: #3a3f72;
+}
+
+.controls button:active {
+  transform: translateY(1px);
+}
+
+.touch-controls {
+  display: grid;
+  place-items: center;
+  margin-top: 16px;
+  gap: 8px;
+}
+
+.touch-controls .row {
+  display: flex;
+  gap: 10px;
+}
+
+.dpad {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid #2a2e52;
+  background: #13162b;
+  color: var(--text);
+  font-size: 20px;
+}
+
+@media (min-width: 720px) {
+  .touch-controls {
+    display: none;
+  }
+}
+
